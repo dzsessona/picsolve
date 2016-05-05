@@ -1,3 +1,6 @@
 [0m[[0minfo[0m] [0m[32mCartSpec:[0m[0m
 [0m[[0minfo[0m] [0m[32mThe checkout[0m[0m
 [0m[[0minfo[0m] [0m[32m- should return a None if it is emtpy[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return the price of 60 p for a cart with one apple[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return the price of 25 p for a cart with one ornge[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return the correct price for the reference cart[0m[0m
