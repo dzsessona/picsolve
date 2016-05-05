@@ -3,6 +3,8 @@ import scala.annotation.tailrec
 /**
   * Created by diego on 05/05/16.
   */
+
+//sealed would be nice, also could use java style enum using val to ovverride getPrice
 trait Product {
   def getPrice: Long
 }
@@ -14,6 +16,8 @@ case object Apple extends Product {
 case object Orange extends Product {
   override def getPrice = 25
 }
+
+
 
 trait Discounter {
   def buyOneGetOneFree(quantity: Int, prod: Product): Long = {
@@ -29,7 +33,8 @@ trait Discounter {
 }
 
 
-
+// extends App so could accept command line parameters,
+// i.e. using scallop ?
 object Cart extends App with Discounter {
 
   @tailrec
@@ -40,6 +45,7 @@ object Cart extends App with Discounter {
 
   private def getTotal(items: Seq[Product]): Option[Long] = {
     recGetTotal(items, 0)
+    //following is an alternative to not use recursion
     //Some(items.map(_.getPrice).sum)
   }
 
@@ -53,6 +59,10 @@ object Cart extends App with Discounter {
     items.groupBy[Product](x => x).mapValues(_.length)
   }
 
+  //instead of hardcoding here the discount type for each product could be a map of prod - option[discout]
+  //so easy to change for example to get 3 by discount on apples instead of oranges.
+  //tests need to be changed accordingly to be product agnostic for the discount type
+  // probably look at some design pattern ?
   def applyDicount(items: Seq[Product]): Option[Long] = {
 
     def applyDiscounts: Map[Product, Long] = {
