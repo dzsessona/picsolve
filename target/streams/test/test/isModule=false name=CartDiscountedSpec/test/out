@@ -1,0 +1,7 @@
+[0m[[0minfo[0m] [0m[32mCartDiscountedSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mThe checkout with discounts[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 60 for one or two apples[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 120 for 3 or 4 apples[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 50 for 3 oranges[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 75 for 4 oranges[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 145 for the reference discounted cart[0m[0m
